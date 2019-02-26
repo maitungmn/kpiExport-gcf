@@ -76,8 +76,5 @@ exports.kpiExport = (req, res) => {
     } else {
         // Set CORS headers for the main request
         res.set('Access-Control-Allow-Origin', '*');
-        res.send('Hello World!');
     }
-
-
 };
