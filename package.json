@@ -1,0 +1,15 @@
+{
+  "name": "kpiexport-gcf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gcloud functions deploy kpiExport --trigger-http --runtime nodejs6 --memory 512MB --project sotetsu-hotel --region asia-northeast1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "excel4node": "^1.7.0"
+  }
+}
