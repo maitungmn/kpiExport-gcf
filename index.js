@@ -1,11 +1,11 @@
 const xl = require('excel4node');
+const cors = require('cors')({origin: true});
 
 exports.kpiExport = (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
-    // res.set('Access-Control-Allow-Headers', 'Content-Type');
-    // res.set('Access-Control-Allow-Methods', 'POST');
 
-    if (req.method === 'POST') {
+    // res.set('Access-Control-Allow-Origin', "*");
+    // res.set('Access-Control-Allow-Methods', 'GET, POST');
+    cors(req, res, () => {
         let headers = req.body.headers;
         let data = req.body.data;
         let channelList = req.body.channelList;
@@ -73,8 +73,5 @@ exports.kpiExport = (req, res) => {
             }
         }
         wb.write('kpi_table.xlsx', res);
-    } else {
-        // Set CORS headers for the main request
-        res.set('Access-Control-Allow-Origin', '*');
-    }
+    })
 };

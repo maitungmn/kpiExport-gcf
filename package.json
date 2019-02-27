@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gcloud functions deploy kpiExport --trigger-http --runtime nodejs6 --memory 512MB --project sotetsu-hotel --region asia-northeast1"
+    "deploy": "gcloud functions deploy kpiExport --trigger-http --runtime nodejs8 --memory 1024MB --project sotetsu-hotel --region asia-northeast1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "excel4node": "^1.7.0"
   }
 }
